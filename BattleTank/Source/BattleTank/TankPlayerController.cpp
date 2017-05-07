@@ -17,11 +17,11 @@ void ATankPlayerController::BeginPlay()
 	}
 	else
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Tank is controlled, %s"), *(ControlledTank->GetName()));
+		UE_LOG(LogTemp, Warning, TEXT("TankController is possessing %s"), *(ControlledTank->GetName()));
 	}
 }
 
-Atank* ATankPlayerController::GetControlledTank() const
+ATank* ATankPlayerController::GetControlledTank() const
 {
-	return Cast<Atank>(GetPawn());
+	return Cast<ATank>(GetPawn());
 }
