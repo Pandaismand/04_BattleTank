@@ -18,15 +18,22 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
-	ATank* GetControlledTank() const;
-	
 	virtual void BeginPlay() override;
 
 private:
+	ATank* GetControlledTank() const;
+	
 	// Moving the turrettower so that a shot would hit where the croshair intersects the world
 	void AimTowardsCrosshair();
 	
 	// Return an OUT parameter, true if hit landscape
 	bool GetSightRayHitLocation(FVector& OutHitLocation) const;
+
+	// crosshair location variables (percent of monitor)
+	UPROPERTY(EditAnywhere)
+	float CrossHairXLocation = 0.5;
+	
+	UPROPERTY(EditAnywhere)
+	float CrossHairYLocation = 0.33333;
 	
 };
