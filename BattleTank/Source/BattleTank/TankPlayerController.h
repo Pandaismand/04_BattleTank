@@ -15,8 +15,15 @@ class BATTLETANK_API ATankPlayerController : public APlayerController
 	GENERATED_BODY()
 	
 public:
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
+
 	ATank* GetControlledTank() const;
 	
 	virtual void BeginPlay() override;
+
+private:
+	// Moving the turrettower so that a shot would hit where the croshair intersects the world
+	void AimTowardsCrosshair();
 	
 };
