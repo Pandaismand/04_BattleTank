@@ -35,6 +35,12 @@ private:
 	
 	UPROPERTY(EditAnywhere)
 	float CrossHairYLocation = 0.33333;
+	
+	UPROPERTY(EditAnywhere)
+	float LineTraceRange = 100000.0;
 
+	// get the direction from camera to croshair (Crosshair has been set manually in cpp and manually in PlayerUI_WBP - theese are not linked)
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirtection) const;
+
+	bool GetLookVectorHitLocation(FVector LookDirection, FVector& OutHitLocation) const;
 };
